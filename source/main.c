@@ -15,21 +15,22 @@
 
 int main(void) {
     /* Insert DDR and PORT initializations */
-	DDRA = 0xFF; PORTA = 0xFF;
-	DDRB = 0xFF; PORTB = 0xFF; 
-	DDRC = 0x00; PORTC = 0x00;
+	DDRA = 0x00; PORTA = 0xFF;
+	DDRB = 0x00; PORTB = 0xFF; 
+	DDRC = 0xFF; PORTC = 0x00;
   
 	unsigned char tmpB = 0x00;
 	unsigned char tmpA = 0x00;
 	unsigned char tmpC = 0x00;
 	unsigned char i = 0x00; 
-
+	
     /* Insert your solution below */
     while (1) {
 	tmpB = PINB;
 	tmpA = PINA;
 	i = 0x00;
 	tmpC = 0x00;
+
 	// Check if each bit in Port A has a 1
 	for (i = 0x01; i != 0x00; i = i << 1){
 		if (tmpA & i){
@@ -37,6 +38,7 @@ int main(void) {
 			
 		}
 	}
+
 	// Check if each bit in Port B has a 1
 	for (i = 0x01; i != 0x00; i = i << 1){
                 if (tmpB & i){
